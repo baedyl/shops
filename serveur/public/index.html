@@ -1,1 +1,81 @@
-OK!
+<html lang="en">
+	<head>
+        <title>CRUD avec Express + MongoDB</title>
+        <script src="js/crudAvecFetchAvecTable.js"></script>
+		<link rel="stylesheet" href="css/styles.css" type="css">
+    </head>
+    <body>
+        <h1>Test de l'API sur le serveur de shops</h1>
+        <h2>HTTP GET pour obtenir des shops, ou un seul<h2>
+            <h3>GET /api/shops</h3>
+            <p>Pour tester avec Ajax, il faut du JavaScript. On utilise la nouvelle API fetch, disponible depuis 2012. Mais avec un polyfill on peut la faire fonctionner sur tous les navigateurs, même les plus anciens.<p>
+            <p><strong>Réponse Ajax du serveur:</strong></p>
+            <div id="reponseGET" class="response"></div>
+
+            <ul>
+                <li>GET en fetch/Ajax correspondant à la sélection de tous les shops: <button onclick="getRequest1();">Clicker</button></li>
+                <p></p>
+            </ul>
+        <h2>HTTP PUT pour modifier un shop</h2>
+        <p>Avec fetch/Ajax PUT<p>
+        <p><strong>Réponse Ajax du serveur:</strong></p>
+        <div id="reponsePUT" class="response"></div>
+        <form id="formulaireModification" onsubmit="putRequest(event);">
+            <fieldset>
+                <legend>Modification d'un shop</legend>
+                <label>
+                    Id: <input type="text" name="_id"
+                    value="" required placeholder="Id du shop à modifier">
+                </label>
+                <p></p>
+                <label>
+                    Nom: <input type="text" name="name"
+                    value="" required placeholder="Nom Shop">
+                </label>
+                <p></p>
+                <label>
+                    Distance: <input type="text" name="distance" value="" required placeholder="Distance">
+                </label>
+                <p></p>
+                <button>Modifier ce shop</button>
+            </fieldset>
+        </form>
+        
+        <h2>HTTP POST pour insérer un shop</h2>
+			<p>Avec fetch/Ajax POST<p>
+			<p><strong>Réponse Ajax du serveur:</strong></p>
+			<div id="reponsePOST" class="response"></div>
+			<form onsubmit="postRequest(event);">
+				<fieldset>
+					<legend>Ajout d'un shop</legend>
+					<label>
+						Name: <input type="text" name="name"
+						value="" required placeholder="shops's name">
+					</label>
+					<p></p>
+					<label>
+						Distance: <input type="text" name="distance" value="" required placeholder="distance">
+					</label>
+					<p></p>
+					<button>Add shop</button>
+				</fieldset>
+            </form>
+        
+
+        <h2>HTTP DELETE pour Supprimer un shop</h2>
+        <p>Avec fetch/Ajax DELETE<p>
+        <p><strong>Réponse Ajax du serveur:</strong></p>
+        <div id="reponseDELETE" class="response"></div>
+        <form onsubmit="deleteRequest(event);">
+            <fieldset>
+                <legend>Suppression d'un shop</legend>
+                <label>
+                    Id: <input type="text" name="_id"
+                    value="" required placeholder="Id du shop à supprimer">
+                </label>
+
+                <button>Supprimer ce shop</button>
+            </fieldset>
+        </form>
+    </body>
+</html>
